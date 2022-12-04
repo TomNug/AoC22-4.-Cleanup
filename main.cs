@@ -14,12 +14,13 @@ class Program {
                       Convert.ToInt32(pairData[2]), 
                       Convert.ToInt32(pairData[3])};
 
-      Console.WriteLine("{0}-{1},{2}-{3}",ranges[0], ranges[1], ranges[2], ranges[3]);
-
-      if ((ranges[0] >= ranges[2] && ranges[1] <= ranges[3]) || 
-          (ranges[2] >= ranges[0] && ranges[3] <= ranges[1]))
+      if ((ranges[0] <= ranges[3] && ranges[0] >= ranges[2])|| 
+          (ranges[1] >= ranges[2] && ranges[0] <= ranges[3]))
       {
         overlaps++;
+        Console.WriteLine("{0}-{1},{2}-{3} overlaps",ranges[0], ranges[1], ranges[2], ranges[3]);
+      } else {
+        Console.WriteLine("{0}-{1},{2}-{3}",ranges[0], ranges[1], ranges[2], ranges[3]);
       }
     }
     Console.WriteLine("Overlaps: {0}",overlaps);
